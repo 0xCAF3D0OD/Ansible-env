@@ -1,0 +1,39 @@
+---
+- hosts: all
+  become: yes
+  vars:
+    http_port: 80
+    max_clients: 200
+  tasks:
+    - name: Install packages
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - vim
+        - python
+        - net-tools
+        - telnet
+        - curl
+        - openssh-server
+      when: "'{{ inventory_hostname }}' not in ['master']"
+
+    - name: Configure SSH
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^PermitRootLogin'
+        line: 'PermitRootLogin yes'
+      notify:
+        - restart sshd
+
+    - name: Ensure SSH server is running
+      service:
+        name: ssh
+        state: started
+        enabled: yes
+
+  handlers:
+    - name: restart sshd
+      service:
+        name: ssh
+        state: restarted

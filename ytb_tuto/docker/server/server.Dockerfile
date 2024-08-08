@@ -1,6 +1,6 @@
-FROM centos:centos7
+FROM ubuntu:20.04
 
-RUN yum -y update && yum -y install openssh-server vim python net-tools telnet
+RUN apt-get -y update && apt-get -y install openssh-server vim net-tools telnet python
 
 RUN mkdir /var/run/sshd
 RUN echo 'root:THEPASSWORDYOUCREATED' | chpasswd
