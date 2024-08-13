@@ -1,4 +1,6 @@
 version: '3'
+<<<<<<< HEAD
+<<<<<<< HEAD
 services:
   master:
     build:
@@ -10,3 +12,28 @@ services:
     volumes:
       - ~/Documents/Ansible-env/medium_ansible:/root/ansible-dir
     command: tail -f /dev/null
+=======
+
+services:
+	master:
+		build:
+			context: .
+			dockerfile: ./docker/master.Dockerfile
+		working_dir: /root/ansible
+		volumes:
+			- ~/Document/Ansible-env/medium_ansible/:/root/ansible
+		
+>>>>>>> 2064af3 (ajout du docker-compose)
+=======
+services:
+  master:
+    build:
+      context: .
+      dockerfile: ./docker/master.Dockerfile
+    image: ansible-master:latest
+    working_dir: /root/ansible-dir
+    container_name: ansible-master
+    volumes:
+      - ~/Documents/Ansible-env/medium_ansible:/root/ansible-dir
+    command: tail -f /dev/null
+>>>>>>> 145d44e (modify composer for volumes and directories bind)
