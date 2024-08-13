@@ -1,6 +1,11 @@
 version: '3'
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0b8e18f (add script)
 services:
   master:
     build:
@@ -13,6 +18,11 @@ services:
       - ~/Documents/Ansible-env/medium_ansible:/root/ansible-dir
     command: tail -f /dev/null
 =======
+<<<<<<< HEAD
+=======
+>>>>>>> 2064af3 (ajout du docker-compose)
+=======
+>>>>>>> 0b8e18f (add script)
 
 services:
 	master:
@@ -23,9 +33,19 @@ services:
 		volumes:
 			- ~/Document/Ansible-env/medium_ansible/:/root/ansible
 		
+<<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 2064af3 (ajout du docker-compose)
 =======
 services:
+=======
+services:
+>>>>>>> 145d44e (modify composer for volumes and directories bind)
+=======
+>>>>>>> 2064af3 (ajout du docker-compose)
+=======
+services:
+>>>>>>> 0b8e18f (add script)
   master:
     build:
       context: .
@@ -36,4 +56,12 @@ services:
     volumes:
       - ~/Documents/Ansible-env/medium_ansible:/root/ansible-dir
     command: tail -f /dev/null
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 145d44e (modify composer for volumes and directories bind)
+=======
+>>>>>>> 2064af3 (ajout du docker-compose)
+=======
+=======
+>>>>>>> 0b8e18f (add script)
 >>>>>>> 145d44e (modify composer for volumes and directories bind)
