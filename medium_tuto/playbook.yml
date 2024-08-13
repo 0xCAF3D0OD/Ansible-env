@@ -1,0 +1,10 @@
+---
+- hosts: docker
+  become: true
+  tasks:
+    - name: Install nginx Docker container
+      docker_container:
+        name: my_nginx
+        image: nginx
+        ports:
+          - "80:80"
