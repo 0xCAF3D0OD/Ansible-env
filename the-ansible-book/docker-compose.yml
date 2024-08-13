@@ -1,0 +1,16 @@
+version: '3'
+services:
+  master:
+    build:
+      context: .
+      dockerfile: ./docker/master.Dockerfile
+    working_dir: /root/playbooks
+    volumes:
+      - ~/Documents/Ansible-env/the-ansible-book/playbooks:/root/playbooks
+      - ~/Documents/Ansible-env/the-ansible-book/config:/etc/ansible
+    command: tail -f /dev/null
+  
+  web:
+    build:
+      context: .
+      dockerfile: ./docker/server.Dockerfile
