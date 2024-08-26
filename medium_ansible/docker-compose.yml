@@ -1,11 +1,12 @@
 version: '3'
-
 services:
-	master:
-		build:
-			context: .
-			dockerfile: ./docker/master.Dockerfile
-		working_dir: /root/ansible
-		volumes:
-			- ~/Document/Ansible-env/medium_ansible/:/root/ansible
-		
+  master:
+    build:
+      context: .
+      dockerfile: ./docker/master.Dockerfile
+    image: ansible-master:latest
+    working_dir: /root/ansible-dir
+    container_name: ansible-master
+    volumes:
+      - ~/Documents/Ansible-env/medium_ansible:/root/ansible-dir
+    command: tail -f /dev/null
