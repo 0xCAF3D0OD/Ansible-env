@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+	master:
+		build:
+			context: .
+			dockerfile: ./docker/master.Dockerfile
+		working_dir: /root/ansible
+		volumes:
+			- ~/Document/Ansible-env/medium_ansible/:/root/ansible
+		
