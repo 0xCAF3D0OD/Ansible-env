@@ -11,13 +11,9 @@ RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* && \
 # Désactiver le dépôt problématique et installer les dépendances nécessaires
 RUN yum-config-manager --disable centos-sclo-sclo && \
     yum update -y && \
-    yum install -y wget gcc openssl-devel vim epel-release net-tools telnet curl && \
+    yum install -y wget gcc openssl-devel vim epel-release net-tools telnet curl docker && \
     yum clean all && \
     rm -rf /var/cache/yum \
-
-RUN yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-
-RUN yum install -y docker-ce docker-ce-cli containerd.io
 
 # Configurer sudo
 RUN echo "===> Disabling sudo 'requiretty' setting..." && \
