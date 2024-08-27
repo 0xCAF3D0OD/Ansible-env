@@ -13,7 +13,7 @@ RUN yum-config-manager --disable centos-sclo-sclo && \
     yum update -y && \
     yum install -y wget gcc openssl-devel vim epel-release net-tools telnet curl docker && \
     yum clean all && \
-    rm -rf /var/cache/yum \
+    rm -rf /var/cache/yum
 
 # Configurer sudo
 RUN echo "===> Disabling sudo 'requiretty' setting..." && \
@@ -33,6 +33,8 @@ RUN yum -y remove epel-release && yum clean all
 
 # Définir le répertoire de travail
 WORKDIR /workspace
+
+COPY playbookTest.yml /workspacex
 
 # Commande par défaut
 CMD ["bash"]
