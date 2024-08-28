@@ -31,10 +31,5 @@ RUN echo "===> Adding hosts for convenience..." && \
 # Nettoyer
 RUN yum -y remove epel-release && yum clean all
 
-# Définir le répertoire de travail
-WORKDIR /workspace
-
-COPY playbookTest.yml /workspacex
-
 # Commande par défaut
 CMD ["bash"]

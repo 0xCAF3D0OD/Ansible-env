@@ -9,4 +9,7 @@ services:
     container_name: ansible-master
     volumes:
       - ~/Documents/Ansible-env/medium_ansible:/root/ansible-dir
+      - /var/run/docker.sock:/var/run/docker.sock
+    tty: true
+    stdin_open: true
     command: tail -f /dev/null

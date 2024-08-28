@@ -1,0 +1,14 @@
+---
+ansible-navigator:
+  execution-environment:
+    container-engine: podman
+    image: ansible-nav:latest
+    enabled: true
+    pull-policy: missing
+
+  playbook-artifact:
+    save-as: /tmp/playbook-artifacts/{playbook_name}-artifact-{ts_utc}.json
+    enabled: false  # Désactive la création d'artefacts pour éviter les problèmes de permission
+
+  logging:
+    level: debug
