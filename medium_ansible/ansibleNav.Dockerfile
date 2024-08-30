@@ -26,7 +26,7 @@ RUN pip3 install --upgrade pip setuptools && \
 # Configurer Ansible
 RUN echo "===> Adding hosts for convenience..." && \
     mkdir -p /etc/ansible && \
-    echo 'localhost' > /etc/ansible/hosts
+    echo 'localhost ansible_connection=local' > /etc/ansible/hosts
 
 # Nettoyer
 RUN yum -y remove epel-release && yum clean all
