@@ -1,0 +1,15 @@
+---
+ansible-navigator:
+  execution-environment:
+    enabled: false
+#    container-engine: docker
+#    enabled: true
+#    image: quay.io/ansible/ansible-runner:latest
+#    pull:
+#      policy: always
+#
+#  logging:
+#    level: debug
+#
+#  playbook-artifact:
+#    enable: false

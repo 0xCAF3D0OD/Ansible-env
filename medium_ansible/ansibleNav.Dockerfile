@@ -31,5 +31,8 @@ RUN echo "===> Adding hosts for convenience..." && \
 # Nettoyer
 RUN yum -y remove epel-release && yum clean all
 
+COPY ansible-navigator.yml /opt/app-root/src
+COPY bookplay.yml /opt/app-root/src
+
 # Commande par défaut
 CMD ["bash"]

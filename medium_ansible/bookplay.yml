@@ -1,0 +1,20 @@
+---
+- name: this is just a test
+  hosts: localhost
+  gather_facts: true
+  tasks:
+
+    - name: ping test
+      ping:
+#    - name: Update all security-related packages
+#      ansible.builtin.dnf:
+#        name: '*'
+#        state: latest
+#        security: true
+#
+#    - name: Create a new user
+#      ansible.builtin.user:
+#        name: myuser
+#        state: present
+#        create_home: true
+
