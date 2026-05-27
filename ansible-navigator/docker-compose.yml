@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  ansible:
+    build:
+      context: ./docker
+      dockerfile: ansible.Dockerfile
+    working_dir: /app
+    volumes:
+      - ~/Documents/Ansible-env/ansible-navigator:/app
+    command: tail -f /dev/null
